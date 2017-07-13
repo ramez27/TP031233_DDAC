@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CMS_DatabaseModelStoreContainer" CdmEntityContainer="CMS_DatabaseEntities">
+    <EntitySetMapping Name="Containers">
+      <EntityTypeMapping TypeName="CMS_DatabaseModel.Container">
+        <MappingFragment StoreEntitySet="Container">
+          <ScalarProperty Name="ContainerID" ColumnName="ContainerID" />
+          <ScalarProperty Name="ContainerName" ColumnName="ContainerName" />
+          <ScalarProperty Name="ContainerHeight" ColumnName="ContainerHeight" />
+          <ScalarProperty Name="ContainerWidth" ColumnName="ContainerWidth" />
+          <ScalarProperty Name="ContainerLength" ColumnName="ContainerLength" />
+          <ScalarProperty Name="ContainerWeight" ColumnName="ContainerWeight" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Schedules">
+      <EntityTypeMapping TypeName="CMS_DatabaseModel.Schedule">
+        <MappingFragment StoreEntitySet="Schedule">
+          <ScalarProperty Name="ScheduleID" ColumnName="ScheduleID" />
+          <ScalarProperty Name="ArrivalDate" ColumnName="ArrivalDate" />
+          <ScalarProperty Name="ArrivalTime" ColumnName="ArrivalTime" />
+          <ScalarProperty Name="DepartureDate" ColumnName="DepartureDate" />
+          <ScalarProperty Name="DepartureTime" ColumnName="DepartureTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Yards">
+      <EntityTypeMapping TypeName="CMS_DatabaseModel.Yard">
+        <MappingFragment StoreEntitySet="Yard">
+          <ScalarProperty Name="YardID" ColumnName="YardID" />
+          <ScalarProperty Name="YardName" ColumnName="YardName" />
+          <ScalarProperty Name="YardLocation" ColumnName="YardLocation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

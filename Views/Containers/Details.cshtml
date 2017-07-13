@@ -1,0 +1,58 @@
+﻿@model CMS.Models.Container
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Container</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ContainerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContainerName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContainerHeight)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContainerHeight)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContainerWidth)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContainerWidth)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContainerLength)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContainerLength)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContainerWeight)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContainerWeight)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ContainerID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

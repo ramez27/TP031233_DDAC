@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="CMS_DatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Container">
+          <Key>
+            <PropertyRef Name="ContainerID" />
+          </Key>
+          <Property Name="ContainerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ContainerName" Type="varchar" MaxLength="50" />
+          <Property Name="ContainerHeight" Type="varchar" MaxLength="50" />
+          <Property Name="ContainerWidth" Type="varchar" MaxLength="50" />
+          <Property Name="ContainerLength" Type="varchar" MaxLength="50" />
+          <Property Name="ContainerWeight" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Schedule">
+          <Key>
+            <PropertyRef Name="ScheduleID" />
+          </Key>
+          <Property Name="ScheduleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ArrivalDate" Type="varchar" MaxLength="50" />
+          <Property Name="ArrivalTime" Type="varchar" MaxLength="50" />
+          <Property Name="DepartureDate" Type="varchar" MaxLength="50" />
+          <Property Name="DepartureTime" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Yard">
+          <Key>
+            <PropertyRef Name="YardID" />
+          </Key>
+          <Property Name="YardID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="YardName" Type="varchar" MaxLength="50" />
+          <Property Name="YardLocation" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="CMS_DatabaseModelStoreContainer">
+          <EntitySet Name="Container" EntityType="Self.Container" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Schedule" EntityType="Self.Schedule" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Yard" EntityType="Self.Yard" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CMS_DatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Container">
+          <Key>
+            <PropertyRef Name="ContainerID" />
+          </Key>
+          <Property Name="ContainerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ContainerName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ContainerHeight" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ContainerWidth" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ContainerLength" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ContainerWeight" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Schedule">
+          <Key>
+            <PropertyRef Name="ScheduleID" />
+          </Key>
+          <Property Name="ScheduleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ArrivalDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ArrivalTime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DepartureDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DepartureTime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Yard">
+          <Key>
+            <PropertyRef Name="YardID" />
+          </Key>
+          <Property Name="YardID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="YardName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="YardLocation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="CMS_DatabaseEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Containers" EntityType="Self.Container" />
+          <EntitySet Name="Schedules" EntityType="Self.Schedule" />
+          <EntitySet Name="Yards" EntityType="Self.Yard" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CMS_DatabaseModelStoreContainer" CdmEntityContainer="CMS_DatabaseEntities">
+          <EntitySetMapping Name="Containers">
+            <EntityTypeMapping TypeName="CMS_DatabaseModel.Container">
+              <MappingFragment StoreEntitySet="Container">
+                <ScalarProperty Name="ContainerID" ColumnName="ContainerID" />
+                <ScalarProperty Name="ContainerName" ColumnName="ContainerName" />
+                <ScalarProperty Name="ContainerHeight" ColumnName="ContainerHeight" />
+                <ScalarProperty Name="ContainerWidth" ColumnName="ContainerWidth" />
+                <ScalarProperty Name="ContainerLength" ColumnName="ContainerLength" />
+                <ScalarProperty Name="ContainerWeight" ColumnName="ContainerWeight" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Schedules">
+            <EntityTypeMapping TypeName="CMS_DatabaseModel.Schedule">
+              <MappingFragment StoreEntitySet="Schedule">
+                <ScalarProperty Name="ScheduleID" ColumnName="ScheduleID" />
+                <ScalarProperty Name="ArrivalDate" ColumnName="ArrivalDate" />
+                <ScalarProperty Name="ArrivalTime" ColumnName="ArrivalTime" />
+                <ScalarProperty Name="DepartureDate" ColumnName="DepartureDate" />
+                <ScalarProperty Name="DepartureTime" ColumnName="DepartureTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Yards">
+            <EntityTypeMapping TypeName="CMS_DatabaseModel.Yard">
+              <MappingFragment StoreEntitySet="Yard">
+                <ScalarProperty Name="YardID" ColumnName="YardID" />
+                <ScalarProperty Name="YardName" ColumnName="YardName" />
+                <ScalarProperty Name="YardLocation" ColumnName="YardLocation" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
